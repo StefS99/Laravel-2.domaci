@@ -1,11 +1,12 @@
 <?php
 
+use App\Models\Listing;
+use Illuminate\Http\Request;
+use App\Http\Controllers\UserController;
+use Monolog\Handler\RotatingFileHandler;
 use App\Http\Controllers\ListingController;
 use Illuminate\Http\Client\ResponseSequence;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;  //Ovo je namespace koji koristi Laravel za rute
-use Monolog\Handler\RotatingFileHandler;
-use App\Models\Listing;
 
 /*
 |--------------------------------------------------------------------------
@@ -98,13 +99,41 @@ Route::get('/search', function(Request $request){
 Route::get('/', [ListingController::class,'index']);
 
 //Show create Form
-Route::get('/listings/create', [ListingController::class,'create']);
+Route::get('/listings/create', [ListingController::class,'create'])->middleware('auth'); //Samo ulogovn korisnik može da dodaje
+//Middleware se nalazi u app-http-Middleware-Authenticaticate- idemo u redirectTo
 
 //Store - Store new listing (Http-Controlers)
-Route::post('/listings',[ListingController::class,'store']);
+Route::post('/listings',[ListingController::class,'store'])->middleware('auth');
 
 //Edit - Show form to edit listing
-Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
+Route::get('/listings/{listing}/edit', [ListingController::class, 'edit'])->middleware('auth');
+
+//Update listing
+Route::put('/listings/{listing}', [ListingController::class, 'update'])->middleware('auth');
+
+// Manage Listings
+//Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware('auth');
+
+//Delete listing
+Route::delete('/listings/{listing}', [ListingController::class, 'destroy'])->middleware('auth');
 
 //Single listings iz kontrolera (Http-Controlers) --OBAVEZNO NA KRAJU
 Route::get('/listings/{listing}',[ListingController::class,'show']);
+
+//Show register form
+Route::get('/register', [UserController::class, 'register'])->middleware('guest'); //Pokazuje register ako je neko gost, a inače se ne poazuje
+
+//Create New User
+Route::post('/users', [UserController::class, 'store']);
+
+//Log user out
+Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
+
+//Show Login form
+Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest'); //Ruta iz middleware-a
+//Ako nismo prijavljeni na name('login') on će nas poslati da se ulogujemo za svaki koji ima ->middleware('auth'). //Middleware('guest') će nam omogućiti da se ovo pojavljuje samo ako neko nije ulogovan
+//Važno je da i u RouteServiceProvider-u izmenimo home u /
+
+//Log in User
+Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
