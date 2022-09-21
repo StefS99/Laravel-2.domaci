@@ -18,7 +18,9 @@ class DatabaseSeeder extends Seeder
     {
         \App\Models\User::factory(5)->create();
 
-        Listing::create([
+        Listing::factory(6)->create(); //Poziv klase iz foldera factory - ListingFactory kao Listing::factory (Lisiting je istoimen sa Lisiting modelom u App)
+
+        /*Listing::create([
             'title' => 'Laravel Senior Developer',
             'tags' => 'laravel, javascript',
             'company' => "Acme Corp",
@@ -37,7 +39,7 @@ class DatabaseSeeder extends Seeder
             'website' => 'https://www.acme.com',
             'description' => 'Izuzetna firma'
         ]);
-
+        */
         //Seeder veštački puni bazu sa korisnicima definisanim u database-factories-UserFacrtories
         //Komande:
         //  php artisan db:seed  //Popunjavanje baze
