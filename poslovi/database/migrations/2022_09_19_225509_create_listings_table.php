@@ -18,6 +18,7 @@ return new class extends Migration
     {
         Schema::create('listings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade'); //Moramo obrisati i sve što ima veze sa userom koji se obriše
             $table->string('title');
             $table->string('logo')->nullable();  //Ako nema slike za tu kolonu unesi null
             $table->string('tags');
