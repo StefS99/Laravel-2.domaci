@@ -24,7 +24,7 @@
                 },
             };
         </script>
-        <title>LaraGigs | Find Laravel Jobs & Projects</title>
+        <title>JOBS | Sajt za pronalaženje i objavljivanje poslova i projekata kompanija</title>
     </head>
     <body class="mb-48">
         <nav class="flex justify-between items-center mb-4">
@@ -35,14 +35,14 @@
 
                 <li>
                     <span class="font-bold uppercase">
-                        Welcome {{auth()->user()->name}}  <!--Uneto ime će prikazati ovde-->
+                        Dobro došli! {{auth()->user()->name}}  <!--Uneto ime će prikazati ovde-->
                     </span>
                 </li>
                 <li>
                     <form class="inline" method="POST" action="/logout">
                         @csrf
                             <button type="submit">
-                                <i class="fa-solid fa-door-closed"></i>Logout
+                                <i class="fa-solid fa-door-closed"></i>Odjava
                             </button>
                     </form>
                 </li>
@@ -51,12 +51,12 @@
 
                 <li>
                     <a href="/register" class="hover:text-laravel"><i class="fa-solid fa-user-plus"></i>
-                        Register
+                        Registracija
                     </a>
                 </li>
                 <li>
                     <a href="/login" class="hover:text-laravel"><i class="fa-solid fa-arrow-right-to-bracket"></i>
-                        Login
+                        Prijava
                     </a>
                 </li>
 
@@ -73,7 +73,7 @@
         <p class="ml-2">Copyright &copy; 2022, All Rights reserved</p>
         <a
             href="/listings/create"
-            class="absolute top-1/3 right-10 bg-black text-white py-2 px-5">Post Job</a>
+            class="absolute top-1/3 right-10 bg-black text-white py-2 px-5">Postavite posao</a>
         </footer>
         <x-flash-message/>
     </body>

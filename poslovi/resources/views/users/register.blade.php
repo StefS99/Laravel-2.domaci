@@ -2,16 +2,16 @@
     <x-card class="p-10 max-w-lg mx-auto mt-24">
      <header class="text-center">
             <h2 class="text-2xl font-bold uppercase mb-1">
-                Register
+                Registracija
             </h2>
-            <p class="mb-4">Create an account to post gigs</p>
+            <p class="mb-4">Napravite nalog</p>
         </header>
 
         <form method="POST" action="/users">
             @csrf <!--Direktiva-->
             <div class="mb-6">
                 <label for="name" class="inline-block text-lg mb-2">
-                    Name
+                    Ime
                 </label>
                 <input
                     type="text"
@@ -43,7 +43,7 @@
                     for="password"
                     class="inline-block text-lg mb-2"
                 >
-                    Password
+                    Lozinka
                 </label>
                 <input
                     type="password"
@@ -59,7 +59,7 @@
                 <label
                     for="password2"
                     class="inline-block text-lg mb-2">
-                    Confirm Password
+                    Potvrdite lozinku
                 </label>
                 <input
                     type="password"
@@ -76,14 +76,14 @@
                     type="submit"
                     class="bg-laravel text-white rounded py-2 px-4 hover:bg-black"
                 >
-                    Sign Up
+                    Registrujte se
                 </button>
             </div>
 
             <div class="mt-8">
                 <p>
-                    Already have an account?
-                    <a href="/login" class="text-laravel">Login</a>
+                    Već imate nalog?
+                    <a href="/login" class="text-laravel">Prijavite se</a>
                 </p>
             </div>
         </form>

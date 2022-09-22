@@ -26,7 +26,7 @@
                     <div class="border border-gray-200 w-full mb-6"></div>
                     <div>
                         <h3 class="text-3xl font-bold mb-4">
-                            Job Description
+                            Opis posla
                         </h3>
                         <div class="text-lg space-y-6">
                             {{$listing->description}}
@@ -35,14 +35,14 @@
                                 href="mailto:{{$listing->email}}"
                                 class="block bg-laravel text-white mt-6 py-2 rounded-xl hover:opacity-80"
                                 ><i class="fa-solid fa-envelope"></i>
-                                Contact Employer</a
+                                Kontakt zaposlenog</a
                             >
 
                             <a
                                 href="{{$listing->Website}}"
                                 target="_blank"
                                 class="block bg-black text-white py-2 rounded-xl hover:opacity-80"
-                                ><i class="fa-solid fa-globe"></i> Visit
+                                ><i class="fa-solid fa-globe"></i> Posetite
                                 Website</a
                             >
                         </div>

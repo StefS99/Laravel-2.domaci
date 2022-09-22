@@ -29,7 +29,7 @@
                     for="password"
                     class="inline-block text-lg mb-2"
                 >
-                    Password
+                    Lozinka
                 </label>
                 <input
                     type="password"

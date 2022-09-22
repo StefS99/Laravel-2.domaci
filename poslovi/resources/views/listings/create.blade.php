@@ -4,7 +4,7 @@
         <h2 class="text-2xl font-bold uppercase mb-1">
             Create a Gig
         </h2>
-        <p class="mb-4">Post a gig to find a developer</p>
+        <p class="mb-4">Postavite posao</p>
     </header>
 
     <form method="POST" action="/listings" enctype="multipart/form-data"> <!--Pošto imamo file type za sliku!!!-->
@@ -15,7 +15,7 @@
             <label
                 for="company"
                 class="inline-block text-lg mb-2"
-                >Company Name</label>
+                >Ime kompanije</label>
             <input
                 type="text"
                 class="border border-gray-200 rounded p-2 w-full"
@@ -29,7 +29,7 @@
 
         <div class="mb-6">
             <label for="title" class="inline-block text-lg mb-2"
-                >Job Title</label>
+                >Radno mesto - pozicija</label>
             <input
                 type="text"
                 class="border border-gray-200 rounded p-2 w-full"
@@ -46,7 +46,7 @@
             <label
                 for="location"
                 class="inline-block text-lg mb-2"
-                >Job Location</label>
+                >Lokacija</label>
             <input
                 type="text"
                 class="border border-gray-200 rounded p-2 w-full"
@@ -61,7 +61,7 @@
 
         <div class="mb-6">
             <label for="email" class="inline-block text-lg mb-2"
-                >Contact Email</label>
+                >Email</label>
             <input
                 type="text"
                 class="border border-gray-200 rounded p-2 w-full"
@@ -91,7 +91,7 @@
 
         <div class="mb-6">
             <label for="tags" class="inline-block text-lg mb-2">
-                Tags (Comma Separated)
+                Oblasti znajna (Odvojte zarezom)
             </label>
             <input
                 type="text"
@@ -107,7 +107,7 @@
 
         <div class="mb-6">
             <label for="logo" class="inline-block text-lg mb-2">
-                Company Logo
+                Logo kompanije
             </label>
             <input
                 type="file"
@@ -123,7 +123,7 @@
             <label
                 for="description"
                 class="inline-block text-lg mb-2">
-                Job Description
+                Opis posla
             </label>
             <textarea
                 class="border border-gray-200 rounded p-2 w-full"
@@ -141,10 +141,10 @@
             <button
                 class="bg-laravel text-white rounded py-2 px-4 hover:bg-black"
             >
-                Create Gig
+                Postavite posao
             </button>
 
-            <a href="/" class="text-black ml-4"> Back </a>
+            <a href="/" class="text-black ml-4"> Nazad </a>
         </div>
     </form>
  </x-card>
